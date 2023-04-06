@@ -18,6 +18,8 @@ class CreateLinkstepsTable extends Migration
             $table->unsignedBigInteger('steps_id')->default(1);
             $table->string('link')->default('no');
             $table->text('info')->nullable();
+            $table->index('steps_id','linksteps_steps_idx');
+            $table->foreign('steps_id', 'linksteps_steps_fk')->on('steps')->references('id');
             $table->softDeletes();
             $table->timestamps();
         });

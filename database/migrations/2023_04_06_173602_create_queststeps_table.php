@@ -19,6 +19,8 @@ class CreateQueststepsTable extends Migration
 
             $table->text('answer')->nullable();
             $table->boolean('is_true')->default(0); //правильный ответ или нет
+            $table->index('steps_id','queststeps_steps_idx');
+            $table->foreign('steps_id', 'queststeps_steps_fk')->on('steps')->references('id');
             $table->softDeletes();
             $table->timestamps();
         });

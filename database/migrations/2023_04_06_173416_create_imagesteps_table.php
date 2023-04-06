@@ -18,6 +18,8 @@ class CreateImagestepsTable extends Migration
             $table->unsignedBigInteger('steps_id')->default(1);
             $table->string('link')->default('no');
             $table->text('info')->nullable();
+            $table->index('steps_id','imagesteps_steps_idx');
+            $table->foreign('steps_id', 'imagesteps_steps_fk')->on('steps')->references('id');
             $table->softDeletes();
             $table->timestamps();
         });

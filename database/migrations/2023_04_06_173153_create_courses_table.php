@@ -22,6 +22,8 @@ class CreateCoursesTable extends Migration
             $table->string("courl")->default("course_url");
             $table->boolean('is_active')->default(0); //опубликован ли курс
             $table->time('stat_duration')->nullable(); //дата публикации
+            //$table->index('category_id','post_category_idx');
+            //$table->foreign('category_id', 'post_category_fk')->on('categories')->references('id');
             $table->softDeletes();
             $table->timestamps();
         });

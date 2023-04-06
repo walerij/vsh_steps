@@ -20,6 +20,8 @@ class CreateStepsTable extends Migration
             $table->string('title')->nullable(); //название шага
             $table->text('info')->nullable(); //описание шага
             $table->string("type")->default('quest');
+            $table->index('lesson_id','post_lesson_idx');
+            $table->foreign('lesson_id', 'post_lesson_fk')->on('lessons')->references('id');
             $table->softDeletes();
             $table->timestamps();
         });

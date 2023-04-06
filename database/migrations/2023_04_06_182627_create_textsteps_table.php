@@ -18,6 +18,8 @@ class CreateTextstepsTable extends Migration
             $table->unsignedBigInteger('steps_id')->default(1);
 
             $table->text('info')->nullable();
+            $table->index('steps_id','textsteps_steps_idx');
+            $table->foreign('steps_id', 'textsteps_steps_fk')->on('steps')->references('id');
             $table->softDeletes();
             $table->timestamps();
         });

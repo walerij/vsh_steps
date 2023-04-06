@@ -15,8 +15,11 @@ class CreateTeststepsTable extends Migration
     {
         Schema::create('teststeps', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('steps_id')->default(1);
             $table->text('answer')->nullable();
             $table->boolean('is_true')->default(0);
+            $table->index('steps_id','teststeps_steps_idx');
+            $table->foreign('steps_id', 'teststeps_steps_fk')->on('steps')->references('id');
             $table->softDeletes();
             $table->timestamps();
         });
