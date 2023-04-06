@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('vsh_steps');
 });
 
+Route::get('/category',  [App\Http\Controllers\CategoryController::class,"index"])->name('category');
+
+Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');
+
+//Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
