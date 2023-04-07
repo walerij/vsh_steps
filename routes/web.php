@@ -19,6 +19,13 @@ Route::get('/', function () {
 
 Route::get('/category',  [App\Http\Controllers\CategoryController::class,"index"])->name('category');
 
+Route::get('/category/create',  [App\Http\Controllers\CategoryController::class,"create"])->name('category.create');
+Route::post('/category', [App\Http\Controllers\CategoryController::class,"store"])->name('category.store');
+Route::get('/category/{category}', [App\Http\Controllers\CategoryController::class,"show"])->name('category.show');
+Route::get('/category/{category}', [App\Http\Controllers\CategoryController::class,"show"])->name('category.edit');
+
+
+
 Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');
 
 //Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');
