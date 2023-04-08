@@ -2,8 +2,9 @@
 
 @section('content')
 
-    <form action="{{route('category.store')}}"  method="POST">
+    <form action="{{route('category.update',  $category->id)}}"  method="POST">
         @csrf
+        @method('patch')
         <div class="mb-3">
             <label for="exampleFormControlInput1"  class="form-label">Категория</label>
             <input type="text" class="form-control"  id="title" name="title" placeholder="Категория" value="{{$category->title}}">
@@ -14,9 +15,8 @@
         </div>
         <div class="col-auto">
 
-            <a class="btn btn-outline-success" href="{{route('category')}}">Редактировать</a>
-            <a class="btn btn-danger" href="{{route('category')}}">Удалить</a>
-            <a class="btn btn-default" href="{{route('category')}}">К списку категорий</a>
+            <button type="submit" class="btn btn-primary mb-3">Сохранить</button>
+            <a class="btn btn-default" href="{{route('category')}}">Отменить</a>
         </div>
     </form>
 @endsection

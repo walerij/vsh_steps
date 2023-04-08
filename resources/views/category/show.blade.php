@@ -15,7 +15,7 @@
         <div class="col-auto">
 
             <a class="btn btn-outline-success" href="{{route('category.edit', $category->id)}}">Редактировать</a>
-            <a class="btn btn-danger" href="{{route('category.destroy', $category->id)}}">Удалить</a>
+            <a class="btn btn-danger" href="{{route('category.delete', $category->id)}}">Удалить</a>
             <a class="btn btn-default" href="{{route('category')}}">К списку категорий</a>
         </div>
     </form>
