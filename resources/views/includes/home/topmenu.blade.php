@@ -6,13 +6,13 @@
         <a href="index3.html" class="nav-link">Главная</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Курсы</a>
+        <a href="{{route('home.courses')}}" class="nav-link">Курсы</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Вебинары</a>
+        <a href="{{route('home.vebinars')}}" class="nav-link">Вебинары</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Робот Шарп</a>
+        <a href="{{route('home.robosharp')}}" class="nav-link">Робот Шарп</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Магазин</a>

@@ -13,9 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+/* Основные роуты*/
 Route::get('/', function () {
     return view('vsh_steps');
-});
+})->name('home');
+
+/*Home*/
+
+Route::get('/home/courses',  [App\Http\Controllers\HomeController::class,"courses"])->name('home.courses');
+Route::get('/home/vebinars',  [App\Http\Controllers\HomeController::class,"vebinars"])->name('home.vebinars');
+Route::get('/home/robosharp',  [App\Http\Controllers\HomeController::class,"robosharp"])->name('home.robosharp');
+
+
+
+/*CRUD категорий*/
 
 Route::get('/category',  [App\Http\Controllers\CategoryController::class,"index"])->name('category');
 
@@ -27,6 +39,8 @@ Route::patch('/category/{category}', [App\Http\Controllers\CategoryController::c
 Route::get('/category/{category}/delete', [App\Http\Controllers\CategoryController::class,"destroy"])->name('category.delete');
 
 
+
+/*CRUD курсы */
 Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');
 
 //Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');
