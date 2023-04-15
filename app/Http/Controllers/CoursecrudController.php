@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\User;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CoursecrudController extends Controller
 {
@@ -12,7 +14,13 @@ class CoursecrudController extends Controller
     {
         $category = Category::all();
         $courses = Course::all();
-        return view('teachers.course.index', compact('category','courses'));
+        return view('teachers.course.index', compact('category', 'courses'));
+    }
+
+
+    public function role()
+    {
+        dd(Auth::user()->roles());
     }
 
     public function create()

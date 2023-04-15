@@ -44,6 +44,7 @@ Route::get('/home/robosharp',  [App\Http\Controllers\HomeController::class,"robo
 /*CRUD курсов*/
 
 Route::get('/teachers/course',  [App\Http\Controllers\CoursecrudController::class,"index"])->name('teachers.course');
+Route::get('/teachers/course/role',  [App\Http\Controllers\CoursecrudController::class,"role"])->name('teachers.course.role');
 Route::get('/teachers/course/create',  [App\Http\Controllers\CoursecrudController::class,"create"])->name('teachers.course.create');
 Route::post('/teachers/course', [App\Http\Controllers\CoursecrudController::class,"store"])->name('teachers.course.store');
 Route::get('/teachers/course/{course}', [App\Http\Controllers\CoursecrudController::class,"show"])->name('teachers.course.show');
