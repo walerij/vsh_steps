@@ -41,13 +41,18 @@ Route::get('/home/robosharp',  [App\Http\Controllers\HomeController::class,"robo
     Route::get('/category/{category}/delete', [App\Http\Controllers\CategoryController::class,"destroy"])->name('category.delete');
 
 
+/*CRUD курсов*/
 
-
-
+Route::get('/teachers/course',  [App\Http\Controllers\CoursecrudController::class,"index"])->name('teachers.course');
+Route::get('/teachers/course/create',  [App\Http\Controllers\CoursecrudController::class,"create"])->name('teachers.course.create');
+Route::post('/course', [App\Http\Controllers\CoursecrudController::class,"store"])->name('teachers.course.store');
 
 
 /*CRUD курсы */
-Route::get('/courses',  "CourseController@index")->name('courses');
+
+    Route::get('/courses',  "CourseController@index")->name('courses');
+
+
 
 //Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');
 
