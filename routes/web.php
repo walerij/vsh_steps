@@ -45,10 +45,14 @@ Route::get('/home/robosharp',  [App\Http\Controllers\HomeController::class,"robo
 
 Route::get('/teachers/course',  [App\Http\Controllers\CoursecrudController::class,"index"])->name('teachers.course');
 Route::get('/teachers/course/create',  [App\Http\Controllers\CoursecrudController::class,"create"])->name('teachers.course.create');
-Route::post('/course', [App\Http\Controllers\CoursecrudController::class,"store"])->name('teachers.course.store');
+Route::post('/teachers/course', [App\Http\Controllers\CoursecrudController::class,"store"])->name('teachers.course.store');
+Route::get('/teachers/course/{course}', [App\Http\Controllers\CoursecrudController::class,"show"])->name('teachers.course.show');
+Route::get('/teachers/course/{course}/edit', [App\Http\Controllers\CoursecrudController::class,"edit"])->name('teachers.course.edit');
+Route::patch('/teachers/course/{course}', [App\Http\Controllers\CoursecrudController::class,"update"])->name('teachers.course.update');
+Route::get('/teachers/course/{course}/delete', [App\Http\Controllers\CoursecrudController::class,"destroy"])->name('teachers.course.delete');
 
 
-/*CRUD курсы */
+/* курсы */
 
     Route::get('/courses',  "CourseController@index")->name('courses');
 

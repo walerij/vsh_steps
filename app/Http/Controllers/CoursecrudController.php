@@ -12,12 +12,12 @@ class CoursecrudController extends Controller
     {
         $category = Category::all();
         $courses = Course::all();
-        return view('admin.course.index', compact('category','courses'));
+        return view('teachers.course.index', compact('category','courses'));
     }
 
     public function create()
     {
-        dd("create");
+        return view('teachers.course.create');
     }
 
     public function store(Request $request)
