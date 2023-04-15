@@ -43,9 +43,12 @@
                 <td>{{$course->title}}</td>
                 <td>{{$course->info}}
                 </td>
-                <td>Категория</td>
-                <td> {{$course->is_active}}</td>
-                <td>X</td>
+                <td>{{$course->category->title}}</td>
+                <td> {{$course->is_active }}</td>
+                <td>
+                    <a class="btn btn-success" href="{{route('teachers.course.edit',$course->id )}}">Редактировать</a>
+                    <a class="btn btn-danger" href="{{route('teachers.course.delete',$course->id )}}">Удалить</a>
+                </td>
             </tr>
             @endforeach
 
