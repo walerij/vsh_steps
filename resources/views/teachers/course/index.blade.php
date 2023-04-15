@@ -33,7 +33,7 @@
                 <th>Заголовок</th>
                 <th>Информация</th>
                 <th>Категория</th>
-                <th>Активность</th>
+                <th>Автор</th>
                 <th>Управление</th>
             </tr>
             </thead>
@@ -44,7 +44,7 @@
                 <td>{{$course->info}}
                 </td>
                 <td>{{$course->category->title}}</td>
-                <td> {{$course->is_active }}</td>
+                <td> {{$course->author->name }}</td>
                 <td>
                     <a class="btn btn-success" href="{{route('teachers.course.edit',$course->id )}}">Редактировать</a>
                     <a class="btn btn-danger" href="{{route('teachers.course.delete',$course->id )}}">Удалить</a>
@@ -58,7 +58,7 @@
                 <th>Заголовок</th>
                 <th>Информация</th>
                 <th>Категория</th>
-                <th>Активность</th>
+                <th>Автор</th>
                 <th>Управление</th>
             </tr>
             </tfoot>

@@ -20,7 +20,7 @@ class CoursecrudController extends Controller
 
     public function role()
     {
-        dd(Auth::user()->roles());
+        dd(Auth::user()->roles[0]->name);
     }
 
     public function create()
