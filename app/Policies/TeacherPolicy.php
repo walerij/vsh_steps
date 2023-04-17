@@ -21,7 +21,10 @@ class TeacherPolicy
 
     public function view(User $user, User $model)
     {
-        return $model->roles->name === 'teacher';
-        return TRUE;
+        //return $model->roles->name === 'teacher';
+        foreach ($model->roles as $role)
+            if ($role->name=='teacher')
+                return true;
+        return false;
     }
 }
