@@ -25,19 +25,42 @@ class CoursecrudController extends Controller
 
     public function create()
     {
-        return view('teachers.course.create');
+        $category = Category::all();
+        return view('teachers.course.create',compact('category'));
     }
 
     public function store(Request $request)
     {
         $data = request()->validate([
             'title' => 'string',
-            'desc' => 'string',
+            'info' => 'string',
+
+            'imagelink' => 'image',
+            'category_id'=>'int',
+
+
         ]);
+
+
+        $data['courl']="course".time();
+        $data["imagelink"] =$this->set_image($data["imagelink"], $data['courl'].".".$data["imagelink"]->extension());
+        $data ['author_id'] = Auth::user()->id;
+
         //dd($data);
-        $category= Course::Create($data);
-        return (redirect()->route('category'));
+        $course= Course::firstOrCreate($data);
+        return (redirect()->route('teachers.courses'));
     }
+
+
+
+    public function set_image($media, $filename_){
+        $filename =$filename_;
+        //dump($filename);
+        //Сохраняем оригинальную картинку
+        $media->move(public_path('images/course_profiles/'),$filename);
+        return($filename);
+    }
+
 
     /**
      * Display the specified resource.
