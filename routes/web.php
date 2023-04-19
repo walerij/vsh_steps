@@ -21,9 +21,9 @@ Route::get('/', function () {
 
 /*Home*/
 
-Route::get('/home/courses',  [App\Http\Controllers\HomeController::class,"courses"])->name('home.courses');
-Route::get('/home/vebinars',  [App\Http\Controllers\HomeController::class,"vebinars"])->name('home.vebinars');
-Route::get('/home/robosharp',  [App\Http\Controllers\HomeController::class,"robosharp"])->name('home.robosharp');
+Route::get('/home/courses',     [App\Http\Controllers\HomeController::class,"courses"])->name('home.courses');
+Route::get('/home/vebinars',    [App\Http\Controllers\HomeController::class,"vebinars"])->name('home.vebinars');
+Route::get('/home/robosharp',   [App\Http\Controllers\HomeController::class,"robosharp"])->name('home.robosharp');
 
 
 

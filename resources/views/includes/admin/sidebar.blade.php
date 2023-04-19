@@ -5,8 +5,8 @@
 
 
         <li class="nav-header">Курсы по категориям</li>
-        <li class="nav-item">
-            <a href="pages/calendar.html" class="nav-link">
+       <!-- <li class="nav-item">
+            <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-align-justify"></i>
                 <p>
                     Категории
@@ -14,13 +14,13 @@
                 </p>
             </a>
         </li>
-
+        -->
         <li class="nav-item">
-            <a href="pages/calendar.html" class="nav-link">
+            <a href="{{route('home.courses')}}" class="nav-link">
                 <i class="nav-icon fas fa-align-justify"></i>
                 <p>
                     Курсы
-                    <span class="badge badge-info right">2</span>
+                   <!-- <span class="badge badge-info right">2</span>-->
                 </p>
             </a>
         </li>

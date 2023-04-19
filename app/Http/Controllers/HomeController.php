@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +15,8 @@ class HomeController extends Controller
 
     public function courses()
     {
-        return view("home.courses");
+        $courses = Course::all();
+        return view("course.index", compact('courses'));
     }
 
     public function vebinars()
