@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use PHPUnit\Exception;
+use function PHPUnit\Framework\exactly;
 
 
 class CourseController extends Controller
@@ -22,18 +24,27 @@ class CourseController extends Controller
     }
 
 
-    public function courses(int $getcats=0)
+    public function courses($getcats=0)
     {
 
         $category = Category::all(); //получаем список всех категорий для передачи в view
 
-        if($getcats<1) //если пришел 0, то категории надо выбрать все
+        try {
+            if($getcats<1) //если пришел 0, то категории надо выбрать все
 
+                $courses = Course::all();
+
+            else// иначе - если какое-то число пришло
+
+                $courses = Course::where('category_id',$getcats)->get(); //выборка по category_id равного этому числу
+        }
+
+        catch (Exception $ex)
+        {
             $courses = Course::all();
 
-        else// иначе - если какое-то число пришло
+        }
 
-            $courses = Course::where('category_id',$getcats)->get(); //выборка по category_id равного этому числу
 
 
         return view('course.index', compact('category', 'courses'));
