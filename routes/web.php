@@ -55,8 +55,8 @@ Route::get('/teachers/course/{course}/delete', [App\Http\Controllers\CoursecrudC
 
 /* курсы */
 
-    Route::get('/courses',  "CourseController@index")->name('courses');
-
+    //Route::get('/courses',  "CourseController@index")->name('courses');
+    Route::get('/courses/{getcats}',  "CourseController@courses")->name('courses');
 
 
 //Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');
