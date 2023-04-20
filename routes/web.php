@@ -62,7 +62,7 @@ Route::get('/teachers/course/{course}/delete', [App\Http\Controllers\CoursecrudC
 //Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard'); //после залогинивания
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

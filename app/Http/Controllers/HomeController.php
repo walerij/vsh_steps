@@ -15,8 +15,8 @@ class HomeController extends Controller
 
     public function courses()
     {
-        $courses = Course::all();
-        return view("course.index", compact('courses'));
+        //$courses = Course::all();
+        return (redirect()->route('courses',0));
     }
 
     public function vebinars()
