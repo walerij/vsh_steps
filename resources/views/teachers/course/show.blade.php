@@ -43,7 +43,7 @@
                         <!----конец информации об активации курса----->
                         <!---кнопки управления--->
                                 <div class="mt-4">
-                                    <a class="btn btn-primary btn-lg btn-flat" href="#">
+                                    <a class="btn btn-primary btn-lg btn-flat" href="{{route('teachers.course.activate',$course->id)}}">
                                         <i class="fas fa-plus-square fa-lg mr-2"></i>
                                         {{$active_button}}
                                     </a>

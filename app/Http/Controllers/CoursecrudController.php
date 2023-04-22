@@ -110,7 +110,20 @@ class CoursecrudController extends Controller
         $course->update(
             $data
         );
-        return (redirect()->route('course'));
+        return (redirect()->route('teachers.courses'));
+    }
+
+    /*сделать курс активным - опубликовать курс (или снять с публикации*/
+    public function activate(Request $request, Course  $course)
+    {
+
+        if($course['is_active']==0) //если неактивен
+            $course['is_active']=1; // сделать активным
+        else $course['is_active']=0; //иначе сделать неактивным
+
+        $course->update(
+        );
+        return (redirect()->route('teachers.course.show', $course));
     }
 
     /**
