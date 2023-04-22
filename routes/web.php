@@ -63,6 +63,8 @@ Route::get('/teachers/course/{course}/delete', [App\Http\Controllers\CoursecrudC
     Route::get('/courses/{course}', [App\Http\Controllers\CourseController::class,"show"])->name('courses.show');
 
 
+/*CRUD уроков*/
+Route::get('/teachers/lessons',  [App\Http\Controllers\LessonscrudController::class,"index"])->name('teachers.lessons');
 
 
 //Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');

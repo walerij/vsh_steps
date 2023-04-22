@@ -52,7 +52,7 @@
                                         <i class="fas fa-wrench fa-lg mr-2"></i>
                                         Перейти к редактированию
                                     </a>
-                                    <a class="btn btn-default btn-lg btn-flat" href="#">
+                                    <a class="btn btn-default btn-lg btn-flat" href="{{route('teachers.course.lessons',$course->id )}}">
                                         <i class="fas fa-list fa-lg mr-2"></i>
                                         Уроки курса
                                     </a>

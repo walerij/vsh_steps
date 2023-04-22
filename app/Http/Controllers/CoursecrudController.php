@@ -94,12 +94,12 @@ class CoursecrudController extends Controller
 
 
 /*переход к урокам курса*/
-    public function lessons(Course  $course)
+    public function lessons(Request $request, Course  $course)
     {
         //запись текущего курса (id курса ) в сессию
-
+        $request->session()->put('course', $course['id']);
         //переход к нужному действию контроллера lessonscrud - здесь пока не оно
-        return view('category.edit', compact('course'));
+        return (redirect()->route('teachers.lessons'));
     }
 
 
