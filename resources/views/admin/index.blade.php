@@ -10,7 +10,7 @@
                 <div>
                     <div class="btn-group w-100 mb-2">
                         <a class="btn btn-info active" href="{{route('courses',0)}}" data-filter="all"> Все курсы
-
+                            <span class="badge badge-dark">{{ $courses->count() }} </span>
                         </a>
                         @foreach($category as $cat)
                            <a class="btn btn-info" href="{{route('courses',$cat->id)}}" data-filter="1"> {{$cat->title}}

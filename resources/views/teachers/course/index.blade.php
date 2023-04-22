@@ -46,8 +46,8 @@
                 <td>{{$course->category->title}}</td>
                 <td> {{$course->author->name }}</td>
                 <td>
-                    <a class="btn btn-success" href="{{route('teachers.course.edit',$course->id )}}">Редактировать</a>
-                    <a class="btn btn-danger" href="{{route('teachers.course.delete',$course->id )}}">Удалить</a>
+                    <a class="btn btn-success" href="{{route('teachers.course.show',$course->id )}}">В работу</a>
+                   <!-- <a class="btn btn-danger" href="{{route('teachers.course.delete',$course->id )}}">Удалить</a>-->
                 </td>
             </tr>
             @endforeach

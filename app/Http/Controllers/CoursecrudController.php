@@ -92,13 +92,19 @@ class CoursecrudController extends Controller
         return view('category.edit', compact('course'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+/*переход к урокам курса*/
+    public function lessons(Course  $course)
+    {
+        //запись текущего курса (id курса ) в сессию
+
+        //переход к нужному действию контроллера lessonscrud - здесь пока не оно
+        return view('category.edit', compact('course'));
+    }
+
+
+
+/*сохранение изменений курса*/
     public function update(Request $request, Course  $course)
     {
         $data = request()->validate([

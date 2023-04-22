@@ -48,18 +48,18 @@
                                         {{$active_button}}
                                     </a>
 
-                                    <a class="btn btn-default btn-lg btn-flat" href="#">
+                                    <a class="btn btn-default btn-lg btn-flat" href="{{route('teachers.course.edit',$course->id )}}">
                                         <i class="fas fa-wrench fa-lg mr-2"></i>
-                                        Перейти редактированию
+                                        Перейти к редактированию
                                     </a>
                                     <a class="btn btn-default btn-lg btn-flat" href="#">
                                         <i class="fas fa-list fa-lg mr-2"></i>
                                         Уроки курса
                                     </a>
 
-                                    <a class="btn btn-danger btn-lg btn-flat" href="#">
+                                    <a class="btn btn-danger btn-lg btn-flat" href="{{route('teachers.course.delete',$course->id )}}">
                                         <i class="fas fa-minus-circle fa-lg mr-2"></i>
-                                        Пометить на удаление
+                                        Удалить курс
                                     </a>
                                 </div>
                          <!--       конец кнопок управления---->
