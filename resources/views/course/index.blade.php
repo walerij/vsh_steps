@@ -14,7 +14,7 @@
                         </a>
                         @foreach($category as $cat)
                            <a class="btn btn-info" href="{{route('courses',$cat->id)}}" data-filter="1"> {{$cat->title}}
-                               <span class="badge badge-dark">{{$cat->courses->count()}} </span>
+                               <span class="badge badge-dark">{{$cat->courses->where('is_active',1)->count()}} </span>
                            </a>
                         @endforeach
 
@@ -33,9 +33,11 @@
                                             <h5 class="card-title p-2 text-center">{{$course->title}}</h5></a>
                                             <div class="info_block">
                                                   <span>
-                                                    <i class="fas fa-user-clock"></i> {{$course->info}} час
+                                                    <i class="fas fa-user-clock"></i>
                                                   </span>
-                                                <div class="mt-2"></div>
+                                                <div class="mt-2">
+                                                    {{$course->info}}
+                                                </div>
                                                 <span>
                                                    <i class="fas fa-th-large"></i>
                                                 </span>

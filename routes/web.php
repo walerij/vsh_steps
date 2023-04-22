@@ -42,7 +42,7 @@ Route::get('/home/robosharp',   [App\Http\Controllers\HomeController::class,"rob
 
 
 /*CRUD курсов*/
-
+/* создание, редактирование, удаление, активация курсов -  то, что делаем с ролью teacher*/
 Route::get('/teachers/course',  [App\Http\Controllers\CoursecrudController::class,"index"])->name('teachers.course');
 Route::get('/teachers/course/role',  [App\Http\Controllers\CoursecrudController::class,"role"])->name('teachers.course.role');
 Route::get('/teachers/course/create',  [App\Http\Controllers\CoursecrudController::class,"create"])->name('teachers.course.create');
@@ -57,6 +57,9 @@ Route::get('/teachers/course/{course}/delete', [App\Http\Controllers\CoursecrudC
 
     //Route::get('/courses',  "CourseController@index")->name('courses');
     Route::get('/courses/{getcats}',  "CourseController@courses")->name('courses');
+    Route::get('/courses/{course}', [App\Http\Controllers\CourseController::class,"show"])->name('courses.show');
+
+
 
 
 //Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');

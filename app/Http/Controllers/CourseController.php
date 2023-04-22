@@ -32,11 +32,11 @@ class CourseController extends Controller
         try {
             if($getcats<1) //если пришел 0, то категории надо выбрать все
 
-                $courses = Course::all();
+                $courses = Course::where('is_active',1)->get();
 
             else// иначе - если какое-то число пришло
 
-                $courses = Course::where('category_id',$getcats)->get(); //выборка по category_id равного этому числу
+                $courses = Course::where('category_id',$getcats)->where('is_active',1)->get(); //выборка по category_id равного этому числу
         }
 
         catch (Exception $ex)
