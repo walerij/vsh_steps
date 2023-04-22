@@ -71,7 +71,20 @@ class CoursecrudController extends Controller
     public function show(Course  $course)
     {
        // return view('category.show', compact('category'));
-        dd("show");
+        //dd("show");
+        if ($course->is_active==0)
+        {
+            $active_color='danger';
+            $active_status='неопубликован';
+            $active_button = 'Опубликовать';
+        }
+        else
+        {
+            $active_color='success';
+            $active_status='опубликован';
+            $active_button = 'Снять с публикации';
+        }
+        return  view('teachers.course.show', compact('course','active_color','active_status','active_button'));
     }
 
     public function edit(Course  $course)
