@@ -24,7 +24,7 @@
                 <td>{{$lesson->title}}</td>
                 <td>{{$lesson->info}}</td>
                 <td>
-                    <a href="#" class="btn btn-dark">
+                    <a href="{{route('teachers.lessons.show',$lesson->id)}}" class="btn btn-dark">
                         Изменить
                     </a>
                 </td>

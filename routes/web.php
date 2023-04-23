@@ -68,6 +68,9 @@ Route::get('/teachers/lessons',  [App\Http\Controllers\LessonscrudController::cl
 Route::get('/teachers/lessons/create',  [App\Http\Controllers\LessonscrudController::class,"create"])->name('teachers.lessons.create');
 Route::post('/teachers/lessons', [App\Http\Controllers\LessonscrudController::class,"store"])->name('teachers.lessons.store');
 //Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');
+Route::get('/teachers/lessons/{lesson}', [App\Http\Controllers\LessonscrudController::class,"show"])->name('teachers.lessons.show');
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard'); //после залогинивания
