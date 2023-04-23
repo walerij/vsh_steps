@@ -65,8 +65,8 @@ Route::get('/teachers/course/{course}/delete', [App\Http\Controllers\CoursecrudC
 
 /*CRUD уроков*/
 Route::get('/teachers/lessons',  [App\Http\Controllers\LessonscrudController::class,"index"])->name('teachers.lessons');
-
-
+Route::get('/teachers/lessons/create',  [App\Http\Controllers\LessonscrudController::class,"create"])->name('teachers.lessons.create');
+Route::post('/teachers/lessons', [App\Http\Controllers\LessonscrudController::class,"store"])->name('teachers.lessons.store');
 //Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');
 
 Route::get('/dashboard', function () {
