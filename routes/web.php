@@ -73,6 +73,9 @@ Route::get('/teachers/lessons/{lesson}', [App\Http\Controllers\LessonscrudContro
 /*CRUD шагов - step-ов*/
 Route::get('/teachers/steps/create',  [App\Http\Controllers\StepscrudController::class,"create"])->name('teachers.steps.create');
 
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard'); //после залогинивания
 })->middleware(['auth'])->name('dashboard');
