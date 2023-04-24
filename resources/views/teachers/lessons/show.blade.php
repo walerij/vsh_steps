@@ -15,6 +15,7 @@
             <a href="" class="btn btn-outline-dark">Опубликовать/снять с публикации</a>
             <a href="" class="btn btn-outline-success">Редактировать</a>
             <a href="" class="btn btn-outline-danger">Удалить</a>
+            <a href="" class="btn btn-outline-primary">Добавить шаг</a>
         </div>
 
     </div>
@@ -35,12 +36,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                @foreach($lesson->steps as $step)
                         <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
+                            <td>{{$step->title}}</td>
+                            <td>{{$step->info}}</td>
+                            <td>{{$step->type}}</td>
+                            <td>
+                                <a href="" class="btn btn-outline-dark">
+                                    Изменить
+                                </a>
+                            </td>
                         </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

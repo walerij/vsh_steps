@@ -12,4 +12,8 @@ class Lesson extends Model
     use SoftDeletes;
     protected $table = "lessons";
     protected $guarded = false;
+
+    public function steps(){
+        return $this->hasMany(Step::class, 'lesson_id', 'id');
+    }
 }

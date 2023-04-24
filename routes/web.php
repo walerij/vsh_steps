@@ -70,7 +70,8 @@ Route::post('/teachers/lessons', [App\Http\Controllers\LessonscrudController::cl
 //Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');
 Route::get('/teachers/lessons/{lesson}', [App\Http\Controllers\LessonscrudController::class,"show"])->name('teachers.lessons.show');
 
-
+/*CRUD шагов - step-ов*/
+Route::get('/teachers/steps/create',  [App\Http\Controllers\StepscrudController::class,"create"])->name('teachers.steps.create');
 
 Route::get('/dashboard', function () {
     return view('dashboard'); //после залогинивания
