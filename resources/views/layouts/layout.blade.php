@@ -74,6 +74,11 @@
 
             <!-- Sidebar Menu -->
         @include('includes.admin.sidebar')
+            <!--Teachers CRUD Sidebar--->
+        @can('view', auth()->user())
+        @include('includes.teachers.planmenu')
+        @endcan
+            <!----End Teachers CRUD Sidebar------>
         <!-- /.sidebar-menu -->
         </div>
         <!-- /.sidebar -->
