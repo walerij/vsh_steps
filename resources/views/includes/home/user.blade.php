@@ -50,10 +50,19 @@
                         <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Изменения</p>
                     </div>
                 </div>
+
                 <!-- Message End -->
             </a>
             <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                Выход
+            </a>
 
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
         </div>
     </li>
     <!---конец пользователя-->
