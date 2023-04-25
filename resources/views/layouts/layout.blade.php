@@ -75,9 +75,9 @@
             <!-- Sidebar Menu -->
         @include('includes.admin.sidebar')
             <!--Teachers CRUD Sidebar--->
-        @can('view', auth()->user())
+        @if (auth()->user() != null and auth()->user()->checkrole('teacher'))
         @include('includes.teachers.planmenu')
-        @endcan
+        @endif
             <!----End Teachers CRUD Sidebar------>
         <!-- /.sidebar-menu -->
         </div>

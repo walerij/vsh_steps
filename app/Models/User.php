@@ -49,6 +49,13 @@ class User extends Authenticatable
         return $this->hasMany(Course::class, 'author_id', 'id');
     }
 
+    public function checkrole($check_role)
+    {
+        foreach ($this->roles as $role)
+            if ($role->name==$check_role)
+                return true;
+        return false;
+    }
 
 
 }
