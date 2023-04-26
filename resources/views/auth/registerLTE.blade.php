@@ -48,7 +48,7 @@
                             <div class="icheck-primary">
                                 <input type="checkbox" id="agreeTerms" name="terms" value="agree">
                                 <label for="agreeTerms">
-                                    I agree
+                                    Согласен
                                 </label>
                             </div>
                         </div>
