@@ -74,12 +74,10 @@ Route::get('/teachers/lessons/{lesson}', [App\Http\Controllers\LessonscrudContro
 Route::get('/teachers/steps/create',  [App\Http\Controllers\StepscrudController::class,"create"])->name('teachers.steps.create');
 Route::post('/teachers/steps', [App\Http\Controllers\StepscrudController::class,"store"])->name('teachers.steps.store');
 
-/*Добавление ролей пользователям*/
-Route::get('/roleadmin/userrole/',  [App\Http\Controllers\UserrolecrudController::class,"index"])->name('roleadmin.userrole');
-Route::get('/roleadmin/userrole/create',  [App\Http\Controllers\UserrolecrudController::class,"create"])->name('roleadmin.userrole.create');
 
 Route::get('/dashboard', function () {
     return view('dashboard'); //после залогинивания
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+require __DIR__.'/userroles.php';

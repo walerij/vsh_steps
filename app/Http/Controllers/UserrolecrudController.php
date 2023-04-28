@@ -13,8 +13,8 @@ class UserrolecrudController extends Controller
         return view('roleadmin.userrole.index', compact('users'));
     }
 
-  public function create()
-  {
-      dd("Создание");
-  }
+    public function show(User $user)
+    {
+        return view('roleadmin.userrole.show', compact('user'));
+    }
 }

@@ -16,7 +16,7 @@
                <tr>
                    <td>{{$user->name}}</td>
                    <td>{{$user->email}}</td>
-                   <td><a href="#" class="btn btn-success" title="Редактировать роли">{{$user->roles->count()}}</a></td>
+                   <td><a href="{{route('roleadmin.userrole.show',$user->id)}}" class="btn btn-success" title="Редактировать роли">{{$user->roles->count()}}</a></td>
                </tr>
            @endforeach
         </tbody>
