@@ -16,7 +16,7 @@
                             <a href="#" class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button">
                                 <span>Добавить роль</span>
                             </a>
-                           
+
                         </div>
                     </div>
                 </div>

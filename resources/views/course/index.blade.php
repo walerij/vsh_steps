@@ -7,20 +7,7 @@
                 <h4 class="card-title">Курсы по категориям</h4>
             </div>
             <div class="card-body">
-                <div>
-                    <div class="btn-group w-100 mb-2">
-                        <a class="btn btn-info active" href="{{route('courses',0)}}" data-filter="all"> Все курсы
 
-                        </a>
-                        @foreach($category as $cat)
-                           <a class="btn btn-info" href="{{route('courses',$cat->id)}}" data-filter="1"> {{$cat->title}}
-                               <span class="badge badge-dark">{{$cat->courses->where('is_active',1)->count()}} </span>
-                           </a>
-                        @endforeach
-
-                    </div>
-
-                </div>
                 <div>
                     <div class="filter-container p-0 row">
                         @foreach($courses as $course)

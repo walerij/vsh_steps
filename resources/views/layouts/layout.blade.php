@@ -72,11 +72,15 @@
                 </div>
             </div>
 
-            <!-- Sidebar Menu -->
+            <!-- Меню курсов  -->
         @include('includes.admin.sidebar')
+        @if(\Illuminate\Support\Facades\Request::is('courses/*'))
+                @include('includes.category.category')
+        @endif
+
             <!--Teachers CRUD Sidebar--->
         @if (auth()->user() != null and auth()->user()->checkrole('teacher'))
-        @include('includes.teachers.planmenu')
+            @include('includes.teachers.planmenu')
         @endif
             <!----End Teachers CRUD Sidebar------>
         <!-- /.sidebar-menu -->
