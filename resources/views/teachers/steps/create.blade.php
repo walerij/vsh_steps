@@ -19,6 +19,25 @@
             <p class="text-danger">{{$message}}</p>
             @enderror
         </div>
+        <div class="form-group" data-select2-id="51">
+            <label>Выбрать тип курса</label>
+            <select class="form-control select2 select2-hidden-accessible" id="category_id" name="category_id" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+
+                @foreach($types as $type)
+                    <option data-select2-id="{{$type->id}}" value="{{$type->id}}">{{$type->title}}</option>
+                @endforeach
+
+
+            </select>
+            @error('category_id')
+            <p class="text-danger">{{$message}}</p>
+            @enderror
+        </div>
+
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Сохранить</button>
+            <a class="btn btn-default" href="{{route('teachers.course')}}">Отменить</a>
+        </div>
     </form>
 
 @endsection

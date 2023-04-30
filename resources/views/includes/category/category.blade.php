@@ -19,7 +19,7 @@
         <li class="nav-item">
 
             <a href="{{route('courses',$cat->id)}}" class="nav-link">
-                <i class="nav-icon fas fa-align-justify"></i>
+                <i class="far fa-circle nav-icon"></i>
                 <p>
                     {{$cat->title}}
                     <span class="badge badge-info right">{{$cat->courses->count()}}</span>
