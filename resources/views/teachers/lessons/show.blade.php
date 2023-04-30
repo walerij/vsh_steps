@@ -15,7 +15,7 @@
             <a href="" class="btn btn-outline-dark">Опубликовать/снять с публикации</a>
             <a href="" class="btn btn-outline-success">Редактировать</a>
             <a href="" class="btn btn-outline-danger">Удалить</a>
-            <a href="" class="btn btn-outline-primary">Добавить шаг</a>
+            <a href="{{route('teachers.steps.create')}}" class="btn btn-outline-primary">Добавить шаг</a>
         </div>
 
     </div>
@@ -43,7 +43,10 @@
                             <td>{{$step->type}}</td>
                             <td>
                                 <a href="" class="btn btn-outline-dark">
-                                    Изменить
+                                    заполнить контент шага
+                                </a>
+                                <a href="" class="btn btn-outline-danger">
+                                    Удалить шаг
                                 </a>
                             </td>
                         </tr>

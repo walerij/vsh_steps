@@ -11,7 +11,7 @@ class StepscrudController extends Controller
 {
     public function create(Request $request)
     {
-        $course_id = $request->session()->get('course');
+       // $course_id = $request->session()->get('course');
         $lesson_id = $request->session()->get('lesson');
         $steps = Step::find($lesson_id);
         $types= Types::all();
@@ -20,6 +20,21 @@ class StepscrudController extends Controller
 
     public function store(Request $request)
     {
-        dd('store');
+        $data = request()->validate([
+            'title' => 'string',
+            'info' => 'string',
+
+            'type' => 'string',
+
+
+
+        ]);
+       // dd( $data);
+        $data['lesson_id']=$request->session()->get('lesson');
+
+        Step::firstOrCreate(
+            $data
+        );
+        return (redirect()->route('teachers.lessons.show',$request->session()->get('lesson')));
     }
 }

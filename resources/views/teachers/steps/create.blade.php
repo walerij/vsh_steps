@@ -6,8 +6,8 @@
     <form action="{{route('teachers.steps.store')}}"  method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Курс</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="Курс">
+            <label for="exampleFormControlInput1" class="form-label">Шаг</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Заголовок шага">
             @error('title')
             <p class="text-danger">{{$message}}</p>
             @enderror
@@ -21,10 +21,10 @@
         </div>
         <div class="form-group" data-select2-id="51">
             <label>Выбрать тип курса</label>
-            <select class="form-control select2 select2-hidden-accessible" id="category_id" name="category_id" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+            <select class="form-control select2 select2-hidden-accessible" id="type" name="type" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
 
                 @foreach($types as $type)
-                    <option data-select2-id="{{$type->id}}" value="{{$type->id}}">{{$type->title}}</option>
+                    <option data-select2-id="{{$type->id}}" value="{{$type->title}}">{{$type->info}}</option>
                 @endforeach
 
 

@@ -54,10 +54,11 @@ class LessonscrudController extends Controller
         return (redirect()->route('teachers.lessons.show', $lesson));
 
     }
-    public function show(Lesson  $lesson)
+    public function show(Request $request, Lesson  $lesson)
     {
         // return view('category.show', compact('category'));
         //dd("show");
+        $request->session()->put('lesson', $lesson['id']);
         if ($lesson->is_active==0)
         {
             $active_color='danger';
