@@ -78,7 +78,7 @@
                 @include('includes.category.category')
         @endif
 
-            <!--Teachers CRUD Sidebar--->
+            <!--для учителей - меню учебного плана --->
         @if (auth()->user() != null and auth()->user()->checkrole('teacher'))
             @include('includes.teachers.planmenu')
         @endif
