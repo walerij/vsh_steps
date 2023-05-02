@@ -29,7 +29,7 @@
 
 
             </select>
-            @error('category_id')
+            @error('$type_id')
             <p class="text-danger">{{$message}}</p>
             @enderror
         </div>
