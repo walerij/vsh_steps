@@ -12,7 +12,7 @@
                     <div class="filter-container p-0 row">
                         @foreach($courses as $course)
                             <div class="filtr-item col-sm-2" data-category="3, 4"  data-sort="red sample">
-                                <a href="#" data-toggle="lightbox" data-title="sample 3 - red">
+                                <a href="{{route('course.show', $course->id)}}" data-toggle="lightbox" data-title="sample 3 - red">
                                     <div class="card" style="">
                                         <img src="/images/course_profiles/{{$course->imagelink }}" class=" card-img-top mb-2"  alt="red sample"/>
                                         <div class="card-body">

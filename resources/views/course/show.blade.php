@@ -32,9 +32,9 @@
                         <!--<div class="hidden">
 
                         </div>
-                        <div class="bg-{{$active_color}} py-2 px-3 mt-4">
+                        <div class="bg-$active_color py-2 px-3 mt-4">
                             <h2 class="mb-0">
-                                {{$active_status}}
+                                $active_status
                             </h2>
                             <h4 class="mt-0">
                                 <small>Цена: $80.00 </small>
@@ -46,7 +46,7 @@
                                 <div class="mt-4">
                                     <a class="btn btn-primary btn-lg btn-flat" href="#">
                                         <i class="fas fa-plus-square fa-lg mr-2"></i>
-                                        {{$active_button}}
+                                        $active_button
                                     </a>
 
                                     <a class="btn btn-default btn-lg btn-flat" href="#">
