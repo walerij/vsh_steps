@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Step;
 use App\Models\Types;
+use App\Models\Videostep;
 use Illuminate\Http\Request;
 
 class StepscrudController extends Controller
@@ -25,11 +26,8 @@ class StepscrudController extends Controller
             'info' => 'string',
 
             'type' => 'string',
-
-
-
         ]);
-       // dd( $data);
+
         $data['lesson_id']=$request->session()->get('lesson');
 
         Step::firstOrCreate(
@@ -51,9 +49,44 @@ class StepscrudController extends Controller
                 $content = 'teachers.steps.includes.quest';
                 break;
 
+            case "Image":
+                $content = 'teachers.steps.includes.image';
+                break;
+
+            case "Link":
+                $content = 'teachers.steps.includes.link';
+                break;
+
+            case "Test":
+                $content = 'teachers.steps.includes.test';
+                break;
+
+            case "Text":
+                $content = 'teachers.steps.includes.text';
+                break;
+
+
         }
 
 
-        return view($content);
+        return view($content, compact('step'));
+    }
+
+
+    public function storecontent(Request $request, Step $step)
+    {
+        $data = request()->validate([
+            'link' => 'string',
+            'info' => 'string',
+
+
+        ]);
+
+        $data['steps_id']=$step->id;
+
+        Videostep::firstOrCreate(
+            $data
+        );
+        return (redirect()->route('teachers.lessons.show',$request->session()->get('lesson')));
     }
 }
