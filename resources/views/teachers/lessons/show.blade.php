@@ -42,7 +42,7 @@
                             <td>{{$step->info}}</td>
                             <td>{{$step->type}}</td>
                             <td>
-                                <a href="" class="btn btn-outline-dark">
+                                <a href="{{route('teachers.steps.createcontent',$step->id)}}" class="btn btn-outline-dark">
                                     заполнить контент шага
                                 </a>
                                 <a href="" class="btn btn-outline-danger">
