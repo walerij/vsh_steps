@@ -41,22 +41,9 @@ Route::get('/home/robosharp',   [App\Http\Controllers\HomeController::class,"rob
     Route::get('/category/{category}/delete', [App\Http\Controllers\CategoryController::class,"destroy"])->name('category.delete');
 
 
-/*CRUD курсов*/
-/* создание, редактирование, удаление, активация курсов -  то, что делаем с ролью teacher*/
-Route::get('/teachers/course',  [App\Http\Controllers\CoursecrudController::class,"index"])->name('teachers.course');
-Route::get('/teachers/course/role',  [App\Http\Controllers\CoursecrudController::class,"role"])->name('teachers.course.role');
-Route::get('/teachers/course/create',  [App\Http\Controllers\CoursecrudController::class,"create"])->name('teachers.course.create');
-Route::post('/teachers/course', [App\Http\Controllers\CoursecrudController::class,"store"])->name('teachers.course.store');
-Route::get('/teachers/course/{course}', [App\Http\Controllers\CoursecrudController::class,"show"])->name('teachers.course.show');
-Route::get('/teachers/course/{course}/activate', [App\Http\Controllers\CoursecrudController::class,"activate"])->name('teachers.course.activate');
-
-Route::get('/teachers/course/{course}/edit', [App\Http\Controllers\CoursecrudController::class,"edit"])->name('teachers.course.edit');
-Route::get('/teachers/course/{course}/lessons', [App\Http\Controllers\CoursecrudController::class,"lessons"])->name('teachers.course.lessons');
-Route::patch('/teachers/course/{course}', [App\Http\Controllers\CoursecrudController::class,"update"])->name('teachers.course.update');
-Route::get('/teachers/course/{course}/delete', [App\Http\Controllers\CoursecrudController::class,"destroy"])->name('teachers.course.delete');
 
 
-/* курсы */
+/* курсы роуты для простого пользователя */
 
     //Route::get('/courses',  "CourseController@index")->name('courses');
     Route::get('/courses/{getcats}',  "CourseController@courses")->name('courses');
@@ -70,9 +57,7 @@ Route::post('/teachers/lessons', [App\Http\Controllers\LessonscrudController::cl
 //Route::get('/courses',  [App\Http\Controllers\CourseController::class,"index"])->name('courses');
 Route::get('/teachers/lessons/{lesson}', [App\Http\Controllers\LessonscrudController::class,"show"])->name('teachers.lessons.show');
 
-/*CRUD шагов - step-ов*/
-Route::get('/teachers/steps/create',  [App\Http\Controllers\StepscrudController::class,"create"])->name('teachers.steps.create');
-Route::post('/teachers/steps', [App\Http\Controllers\StepscrudController::class,"store"])->name('teachers.steps.store');
+
 
 
 Route::get('/dashboard', function () {
@@ -81,3 +66,5 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 require __DIR__.'/userroles.php';
+require __DIR__.'/courses.php';
+require __DIR__.'/steps.php';

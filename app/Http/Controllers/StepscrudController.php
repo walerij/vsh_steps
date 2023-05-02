@@ -37,4 +37,9 @@ class StepscrudController extends Controller
         );
         return (redirect()->route('teachers.lessons.show',$request->session()->get('lesson')));
     }
+
+    public function createcontent(Step $step)
+    {
+        return view('teachers.steps.includes.video');
+    }
 }
