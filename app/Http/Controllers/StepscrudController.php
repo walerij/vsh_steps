@@ -40,6 +40,20 @@ class StepscrudController extends Controller
 
     public function createcontent(Step $step)
     {
-        return view('teachers.steps.includes.video');
+        $content = 'teachers.steps.includes.quest';
+        switch ($step->type)
+        {
+            case "Video":
+                $content = 'teachers.steps.includes.video';
+                break;
+
+            case "Quest":
+                $content = 'teachers.steps.includes.quest';
+                break;
+
+        }
+
+
+        return view($content);
     }
 }
