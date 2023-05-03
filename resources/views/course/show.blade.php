@@ -66,7 +66,7 @@
                             <div class="icon">
                                 <i class="ion ion-bag"></i>
                             </div>
-                            <a href="#" class="small-box-footer">пройти <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('lesson.show',$lesson->id)}}" class="small-box-footer">пройти <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     @endforeach

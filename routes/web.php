@@ -49,6 +49,11 @@ Route::get('/home/robosharp',   [App\Http\Controllers\HomeController::class,"rob
     Route::get('/courses/{getcats}',  "CourseController@courses")->name('courses');
     Route::get('/course/{course}/show', [App\Http\Controllers\CourseController::class,"show"])->name('course.show');
 
+/*отображение уроков курса*/
+    Route::get('/lessons/{lesson}/show', [App\Http\Controllers\LessonsController::class,"show"])->name('lesson.show');
+
+
+
 
 
 /*CRUD уроков*/
