@@ -16,4 +16,8 @@ class Lesson extends Model
     public function steps(){
         return $this->hasMany(Step::class, 'lesson_id', 'id');
     }
+
+    public function course(){
+        return $this->belongsTo(Course::class, 'course_id', 'id');
+    }
 }
