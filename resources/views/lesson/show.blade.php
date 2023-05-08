@@ -48,18 +48,18 @@
             <div class="row">
 
                 @foreach($lesson->steps as $step)
-                    <div class="container">
-                        <div class="card text-bg-dark">
-                            <img src="..." class="card-img" alt="no">
-                            <div class="card-img-overlay">
-                                <h5 class="card-title">{{$step->title}}</h5>
-                                <p class="card-text">
-                                    {{$step->info}}
-                                </p>
-                                <p class="card-text"><small>Последнее обновление 3 мин. назад</small></p>
+                    <a href="#">
+                        <div class="col-sm-4">
+                            <div class="position-relative">
+                                <img src="../../dist/img/photo1.png" alt="Photo 1" class="img-fluid">
+                                <div class="ribbon-wrapper ribbon-lg">
+                                    <div class="ribbon bg-success text-lg">
+                                        Пройдено
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
 
 
