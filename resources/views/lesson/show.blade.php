@@ -45,21 +45,33 @@
     </div>
     <div class="card card-widget">
         <div class="card-body">
-            <div class="row">
-
+            <div class="row mt-4">
+                <!----<img src="../../dist/img/photo1.png" alt="Photo 1" class="img-fluid">------>
                 @foreach($lesson->steps as $step)
-                    <a href="#">
+
+
                         <div class="col-sm-4">
-                            <div class="position-relative">
-                                <img src="../../dist/img/photo1.png" alt="Photo 1" class="img-fluid">
-                                <div class="ribbon-wrapper ribbon-lg">
-                                    <div class="ribbon bg-success text-lg">
-                                        Пройдено
+                            <a href="#">
+                                <div class="position-relative">
+                                    @if ($step->type=='Video')
+                                        <img src="/images/steps_logos/video-logo.png" alt="Photo 1" class="img-fluid">
+                                    @elseif($step->type=='Quest')
+                                        <img src="/images/steps_logos/quest-logo.jpeg" alt="Photo 1" class="img-fluid">
+                                    @endif
+                                    <div class="ribbon-wrapper ribbon-lg">
+                                        <div class="ribbon bg-success text-lg">
+                                            Пройдено
+                                        </div>
                                     </div>
+                                        <div class="card-img-overlay">
+                                            <h5 class="card-title">{{$step->title}}</h5>
+                                            <p class="card-text">{{$step->info}}</p>
+                                            
+                                        </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                    </a>
+
                 @endforeach
 
 
