@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="card card-widget">
-        <div class="card-header">
+        <div class="card-header bg-success ">
             <div class="user-block">
-
+                <img class="img-circle img-bordered-sm" src="/images/course_profiles/{{$lesson->course->imagelink }}" height="120px" alt="user image">
                 <span class="username">{{$lesson->course->title}}</span>
 
             </div>
@@ -37,19 +37,35 @@
             </div>
             <p>{{$lesson->info}}</p>
 
-
-
-
-
             <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i> Не пройден</button>
             <button type="button" class="btn btn-default btn-sm"><i class="far fa-thumbs-up"></i> Оценки</button>
             <span class="float-right text-muted">45 likes - 2 comments</span>
         </div>
 
+    </div>
+    <div class="card card-widget">
+        <div class="card-body">
+            <div class="row">
+
+                @foreach($lesson->steps as $step)
+                    <div class="container">
+                        <div class="card text-bg-dark">
+                            <img src="..." class="card-img" alt="no">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">{{$step->title}}</h5>
+                                <p class="card-text">
+                                    {{$step->info}}
+                                </p>
+                                <p class="card-text"><small>Последнее обновление 3 мин. назад</small></p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
 
 
+            </div>
 
-
+        </div>
     </div>
 @endsection
 
