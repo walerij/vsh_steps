@@ -66,7 +66,7 @@
                                         <div class="card-img-overlay">
                                             <h5 class="card-title">{{$step->title}}</h5>
                                             <p class="card-text">{{$step->info}}</p>
-                                            
+
                                         </div>
                                 </div>
                             </a>
