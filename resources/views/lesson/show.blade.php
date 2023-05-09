@@ -2,24 +2,14 @@
 
 @section('content')
     <div class="card card-widget">
-        <div class="card-header  ">
+        <div class="card-header bg-gradient-orange ">
             <div class="user-block">
                 <img class="img-circle img-bordered-sm" src="/images/course_profiles/{{$lesson->course->imagelink }}" height="120px" alt="user image">
                 <span class="username">{{$lesson->course->title}}</span>
 
             </div>
 
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" title="Mark as read">
-                    <i class="far fa-circle"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
+            
 
         </div>
 
@@ -60,6 +50,8 @@
                                                видео
                                             @elseif($step->type=='Quest')
                                                задание
+                                            @elseif($step->type=='Link')
+                                               ссылка
                                             @endif
                                         </div>
                                     </div>
