@@ -2,14 +2,14 @@
 
 @section('content')
     <div class="card card-widget">
-        <div class="card-header bg-gradient-orange ">
+        <div class="card-header bg-gradient-dark ">
             <div class="user-block">
                 <img class="img-circle img-bordered-sm" src="/images/course_profiles/{{$lesson->course->imagelink }}" height="120px" alt="user image">
                 <span class="username">{{$lesson->course->title}}</span>
 
             </div>
 
-            
+
 
         </div>
 
@@ -40,9 +40,9 @@
                 @foreach($lesson->steps as $step)
 
 
-                        <div class="col-sm-3">
+                        <div class="col-sm-3 mt-1">
                             <a href="#">
-                                <div class="position-relative">
+                                <div class="position-relative ">
                                     <img src="/images/steps_logos/img_steps_type_{{$step->type}}.png" alt="Photo 1" class="img-fluid">
                                     <div class="ribbon-wrapper ribbon-lg">
                                         <div class="ribbon bg-success text-lg">
@@ -50,6 +50,12 @@
                                                видео
                                             @elseif($step->type=='Quest')
                                                задание
+                                            @elseif($step->type=='Image')
+                                                картинка
+                                            @elseif($step->type=='Text')
+                                                текст
+                                            @elseif($step->type=='Test')
+                                                тест
                                             @elseif($step->type=='Link')
                                                ссылка
                                             @endif
