@@ -41,7 +41,23 @@
 
 
                         <div class="col-sm-3 mt-1">
-                            <a href="#">
+                            <a href="
+
+                            @if ($step->type=='Video')
+                                 {{route('steps.video', $step->id)}}
+                            @elseif($step->type=='Quest')
+                                {{route('steps.quest', $step->id)}}
+                            @elseif($step->type=='Image')
+                                {{route('steps.image', $step->id)}}
+                            @elseif($step->type=='Text')
+                                                            текст
+                            @elseif($step->type=='Test')
+                                                            тест
+                            @elseif($step->type=='Link')
+                                                            ссылка
+                            @endif
+
+                                ">
                                 <div class="position-relative ">
                                     <img src="/images/steps_logos/img_steps_type_{{$step->type}}.png" alt="Photo 1" class="img-fluid">
                                     <div class="ribbon-wrapper ribbon-lg">
