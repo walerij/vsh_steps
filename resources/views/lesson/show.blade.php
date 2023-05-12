@@ -50,11 +50,11 @@
                             @elseif($step->type=='Image')
                                 {{route('steps.image', $step->id)}}
                             @elseif($step->type=='Text')
-                                                            текст
+                                 {{route('steps.text', $step->id)}}
                             @elseif($step->type=='Test')
-                                                            тест
+                                 {{route('steps.test', $step->id)}}
                             @elseif($step->type=='Link')
-                                                            ссылка
+                                 {{route('steps.link', $step->id)}}
                             @endif
 
                                 ">

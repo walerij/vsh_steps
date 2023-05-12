@@ -34,6 +34,6 @@ class StepsController extends Controller
 
     public function link(Step $step)
     {
-        return view('steps.video', compact('step'));
+        return view('steps.link', compact('step'));
     }
 }
