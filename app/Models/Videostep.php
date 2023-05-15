@@ -12,4 +12,8 @@ class Videostep extends Model
     use SoftDeletes;
     protected $table = "videosteps";
     protected $guarded = false;
+
+    public function step(){
+        return $this->belongsTo(Step::class, 'steps_id', 'id');
+    }
 }

@@ -9,6 +9,7 @@ class StepsController extends Controller
 {
     public function video(Step $step)
     {
+        //dd($step->videostep);
         return view('steps.video', compact('step'));
     }
 
