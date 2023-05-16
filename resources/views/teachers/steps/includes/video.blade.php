@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <form action="{{route('teachers.steps.storecontent', $step->id)}}"  method="POST" enctype="multipart/form-data">
+    <form action="{{route('teachers.steps.videocontent', $step->id)}}"  method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Ссылка на видео</label>
