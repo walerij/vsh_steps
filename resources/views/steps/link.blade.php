@@ -17,7 +17,7 @@
         </div>
 
         <div class="card-footer">
-            <a href="{{$step->linkstep->link}}" type="button" class="btn btn-block btn-outline-primary btn-lg">Перейти</a>
+            <a href="{{$step->linkstep->link}}" type="button" target="_blank" class="btn btn-block btn-outline-primary btn-lg">Перейти</a>
         </div>
 
     </div>

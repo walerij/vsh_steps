@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Imagestep;
 use App\Models\Step;
 use App\Models\Textstep;
 use App\Models\Types;
 use App\Models\Videostep;
 use App\Models\Linkstep;
+use App\Models\Queststep;
 use Illuminate\Http\Request;
 
 class StepscrudController extends Controller
@@ -91,6 +93,24 @@ class StepscrudController extends Controller
         );
         return (redirect()->route('teachers.lessons.show',$request->session()->get('lesson')));
     }
+
+    public function imagecontent(Request $request, Step $step)
+    {
+        $data = request()->validate([
+            'link' => 'string',
+            'info' => 'string',
+
+
+        ]);
+
+        $data['steps_id']=$step->id;
+
+        Imagestep::firstOrCreate(
+            $data
+        );
+        return (redirect()->route('teachers.lessons.show',$request->session()->get('lesson')));
+    }
+
 
 
     public function linkcontent(Request $request, Step $step)
