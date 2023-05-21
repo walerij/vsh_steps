@@ -37,11 +37,16 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'photo' => 'image',
         ]);
+
+        //$data["photo"] =$this->set_image($data["imagelink"], $data['courl'].".".$data["imagelink"]->extension());
+
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'photo'=> $this->set_image($request->photo,$request->email.'.'.$request->photo->extension() ),
             'password' => Hash::make($request->password),
         ]);
 
@@ -51,4 +56,13 @@ class RegisteredUserController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
+
+    public function set_image($media, $filename_){
+        $filename =$filename_;
+        //dump($filename);
+        //Сохраняем оригинальную картинку
+        $media->move(public_path('images/user_photos/'),$filename);
+        return($filename);
+    }
+
 }

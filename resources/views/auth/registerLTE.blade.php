@@ -9,7 +9,7 @@
             <div class="card-body register-card-body">
                 <p class="login-box-msg">Регистрация нового пользователя</p>
 
-                <form action="{{ route('register') }}" method="post">
+                <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" id="name" name="name" placeholder="Имя пользователя">
@@ -42,6 +42,13 @@
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
+                    </div>
+                    <div class="custom-file mb-3">
+                        <input type="file" class="custom-file-input" id="photo" name="photo" >
+                        <label class="custom-file-label" for="exampleInputFile">Загрузить фото</label>
+                        @error('photo')
+                        <p class="text-danger">{{$message}}</p>
+                        @enderror
                     </div>
                     <div class="row">
                         <div class="col-6">
