@@ -57,9 +57,9 @@
                                  {{route('steps.link', $step->id)}}
                             @endif
 
-                                ">
+                                " target="_blank">
                                 <div class="position-relative ">
-                                    <img src="/images/steps_logos/img_steps_type_{{$step->type}}.png" alt="Photo 1" class="img-fluid">
+                                    <img src="/images/steps_logos/img_steps_type.png" alt="Photo 1" class="img-fluid">
                                     <div class="ribbon-wrapper ribbon-lg">
                                         <div class="ribbon bg-success text-lg">
                                             @if ($step->type=='Video')
@@ -77,8 +77,8 @@
                                             @endif
                                         </div>
                                     </div>
-                                        <div class="card-img-overlay">
-
+                                        <div class="card-img-overlay text-orange mt-5">
+                                           <h4 class="mt-10">{{$step->title}}</h4>
 
                                         </div>
                                 </div>

@@ -8,3 +8,13 @@
 - дизайнерские решения от AdminLTE
 - редактирование информации
 - расширенная ролевая модель проекта
+
+
+Описание
+- базы данных и миграции [здесь](https://laravel.com/docs/routing)
+- контроллеры  [здесь](https://laravel.com/docs/routing)
+- модели  [здесь](https://laravel.com/docs/routing)
+- структура представлений [здесь](https://laravel.com/docs/routing)
+- ролевая модель [здесь](https://laravel.com/docs/routing)
+- папки изображений [здесь](https://laravel.com/docs/routing)
+- виды шагов [здесь](https://laravel.com/docs/routing)
