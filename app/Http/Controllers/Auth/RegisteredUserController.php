@@ -37,16 +37,18 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'photo' => 'image',
+            'photo' => ['required','image'] ,
         ]);
 
         //$data["photo"] =$this->set_image($data["imagelink"], $data['courl'].".".$data["imagelink"]->extension());
 
-
+       // dd($request->photo);
+        $ph_ = $this->set_image($request->photo,$request->email.'.'.$request->photo->extension());
+        //dd($ph_);
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'photo'=> $this->set_image($request->photo,$request->email.'.'.$request->photo->extension() ),
+            'photo'=> $ph_ ,
             'password' => Hash::make($request->password),
         ]);
 
