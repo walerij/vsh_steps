@@ -8,7 +8,7 @@
             <input type="text" class="form-control" id="link" name="link" placeholder="Код видео с ютуб">
             @error('link')
             <p class="text-danger">{{$message}}</p>
-            @enderror
+            @enderrors
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Описание видео</label>
