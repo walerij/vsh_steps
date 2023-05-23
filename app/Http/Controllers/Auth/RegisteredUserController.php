@@ -44,7 +44,7 @@ class RegisteredUserController extends Controller
 
        // dd($request->photo);
         $ph_ = $this->set_image($request->photo,$request->email.'.'.$request->photo->extension());
-        //dd($ph_);
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -59,9 +59,15 @@ class RegisteredUserController extends Controller
         return redirect(RouteServiceProvider::HOME);
     }
 
+    public function edit( User $user)
+    {
+        return view('auth.edituserLTE', compact($user));
+    }
+
+
+
     public function set_image($media, $filename_){
         $filename =$filename_;
-        //dump($filename);
         //Сохраняем оригинальную картинку
         $media->move(public_path('images/user_photos/'),$filename);
         return($filename);
