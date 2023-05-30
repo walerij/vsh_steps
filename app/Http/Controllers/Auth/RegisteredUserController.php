@@ -59,9 +59,15 @@ class RegisteredUserController extends Controller
         return redirect(RouteServiceProvider::HOME);
     }
 
+    public function show(User $user)
+    {
+        return view('auth.showuserLTE', compact('user'));
+    }
+
+
     public function edit( User $user)
     {
-        return view('auth.edituserLTE', compact($user));
+        return view('auth.edituserLTE', compact('user'));
     }
 
 

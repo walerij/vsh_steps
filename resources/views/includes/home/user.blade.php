@@ -37,7 +37,7 @@
 
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right"> <!--подменю--->
-            <a href="#" class="dropdown-item">
+            <a href="{{ route('user.show',Auth::user() ) }}" class="dropdown-item">
                 <!-- Message Start -->
                 <div class="media">
                     @if (Auth::user()->photo!=null)
