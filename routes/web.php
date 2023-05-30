@@ -66,7 +66,7 @@ Route::get('/teachers/lessons/{lesson}', [App\Http\Controllers\LessonscrudContro
 
 /*Пользователь - личный кабинет, редактирование информации*/
 
-Route::get('user/{user}', [RegisteredUserController::class,"show"])->name('user.show');
+Route::get('user/{user}', [App\Http\Controllers\Auth\RegisteredUserController::class,"show"])->name('user.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard'); //после залогинивания
