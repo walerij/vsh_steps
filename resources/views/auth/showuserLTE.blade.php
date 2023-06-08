@@ -15,16 +15,16 @@
                             <p class="text-muted text-center">{{$user->email}}</p>
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
-                                    <b>Followers</b> <a class="float-right">1,322</a>
+                                    <b>Звание</b> <a class="float-right">Полиморфер</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Following</b> <a class="float-right">543</a>
+                                    <b>Накомленный опыт</b> <a class="float-right">474</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Friends</b> <a class="float-right">13,287</a>
+                                    <b>Баланс мегахешей</b> <a class="float-right">0</a>
                                 </li>
                             </ul>
-                            <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                            <a href="#" class="btn btn-primary btn-block"><b>Подробнее</b></a>
                         </div>
 
                     </div>
@@ -32,29 +32,30 @@
 
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">About Me</h3>
+                            <h3 class="card-title">Обо мне</h3>
                         </div>
 
                         <div class="card-body">
-                            <strong><i class="fas fa-book mr-1"></i> Education</strong>
+                            <strong><i class="fas fa-book mr-1"></i> Образование</strong>
                             <p class="text-muted">
                                 B.S. in Computer Science from the University of Tennessee at Knoxville
                             </p>
                             <hr>
-                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
-                            <p class="text-muted">Malibu, California</p>
+                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Место жительства</strong>
+                            <p class="text-muted">Висагинас, Литва</p>
                             <hr>
-                            <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
+                            <strong><i class="fas fa-pencil-alt mr-1"></i> Навыки</strong>
                             <p class="text-muted">
-                                <span class="tag tag-danger">UI Design</span>
-                                <span class="tag tag-success">Coding</span>
+                                <span class="tag tag-danger">С#</span>
+                                <span class="tag tag-danger">asp.net</span>
+                                <span class="tag tag-success">Java</span>
                                 <span class="tag tag-info">Javascript</span>
                                 <span class="tag tag-warning">PHP</span>
                                 <span class="tag tag-primary">Node.js</span>
                             </p>
                             <hr>
-                            <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                            <strong><i class="far fa-file-alt mr-1"></i> Клуб формулистов</strong>
+                            <p class="text-muted">не состоит</p>
                         </div>
 
                     </div>
@@ -65,9 +66,9 @@
                     <div class="card">
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Timeline</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Курсы</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Консольные задачи</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Комментарии</a></li>
                             </ul>
                         </div>
                         <div class="card-body">
