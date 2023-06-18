@@ -15,13 +15,13 @@
                             <p class="text-muted text-center">{{$user->email}}</p>
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
-                                    <b>Звание</b> <a class="float-right">Полиморфер</a>
+                                    <b>Звание</b> <a class="float-right">{{$user->rank}}</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Накомленный опыт</b> <a class="float-right">474</a>
+                                    <b>Накомленный опыт</b> <a class="float-right">{{$user->experience}}</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Баланс мегахешей</b> <a class="float-right">0</a>
+                                    <b>Баланс мегахешей</b> <a class="float-right">{{$user->megahash}}</a>
                                 </li>
                             </ul>
                             <a href="#" class="btn btn-primary btn-block"><b>Подробнее</b></a>
@@ -38,20 +38,15 @@
                         <div class="card-body">
                             <strong><i class="fas fa-book mr-1"></i> Образование</strong>
                             <p class="text-muted">
-                                B.S. in Computer Science from the University of Tennessee at Knoxville
+                                {{$user->education}}
                             </p>
                             <hr>
                             <strong><i class="fas fa-map-marker-alt mr-1"></i> Место жительства</strong>
-                            <p class="text-muted">Висагинас, Литва</p>
+                            <p class="text-muted">{{$user->city}}</p>
                             <hr>
                             <strong><i class="fas fa-pencil-alt mr-1"></i> Навыки</strong>
                             <p class="text-muted">
-                                <span class="tag tag-danger">С#</span>
-                                <span class="tag tag-danger">asp.net</span>
-                                <span class="tag tag-success">Java</span>
-                                <span class="tag tag-info">Javascript</span>
-                                <span class="tag tag-warning">PHP</span>
-                                <span class="tag tag-primary">Node.js</span>
+                                {{$user->skills}}
                             </p>
                             <hr>
                             <strong><i class="far fa-file-alt mr-1"></i> Клуб формулистов</strong>
