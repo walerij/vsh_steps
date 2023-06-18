@@ -66,14 +66,14 @@
                     <div class="card">
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Курсы</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#mycourses" data-toggle="tab">Курсы</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Консольные задачи</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Комментарии</a></li>
                             </ul>
                         </div>
                         <div class="card-body">
                             <div class="tab-content">
-                                <div class="active tab-pane" id="activity">
+                                <div class="active tab-pane" id="mycourses">
 
                                     <div class="post">
                                         <div class="user-block">
