@@ -7,6 +7,7 @@ SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
 SET NAMES utf8mb4;
 
+DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Новая категория',
@@ -23,6 +24,7 @@ INSERT INTO `categories` (`id`, `title`, `desc`, `deleted_at`, `created_at`, `up
 (3,	'PHP',	'Курсы по PHP для нас',	'2023-04-08 01:39:05',	'2023-04-07 01:07:24',	'2023-04-08 01:39:05'),
 (4,	'PHP',	'Курсы на языке PHP',	NULL,	'2023-04-12 17:40:02',	'2023-04-12 17:40:02');
 
+DROP TABLE IF EXISTS `courses`;
 CREATE TABLE `courses` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `category_id` bigint unsigned NOT NULL,
@@ -47,6 +49,7 @@ INSERT INTO `courses` (`id`, `category_id`, `title`, `info`, `imagelink`, `courl
 (2,	4,	'php',	'php first',	'course1681764382.jpg',	'course1681764382',	1,	NULL,	NULL,	'2023-04-17 17:46:22',	'2023-04-22 17:05:26',	1),
 (3,	1,	'C# первые программки',	'Самые простые программы на C#',	'course1681764663.png',	'course1681764663',	1,	NULL,	NULL,	'2023-04-17 17:51:03',	'2023-04-22 17:12:27',	1);
 
+DROP TABLE IF EXISTS `failed_jobs`;
 CREATE TABLE `failed_jobs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -60,6 +63,7 @@ CREATE TABLE `failed_jobs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
+DROP TABLE IF EXISTS `imagesteps`;
 CREATE TABLE `imagesteps` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `steps_id` bigint unsigned NOT NULL DEFAULT '1',
@@ -74,6 +78,7 @@ CREATE TABLE `imagesteps` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
+DROP TABLE IF EXISTS `lessons`;
 CREATE TABLE `lessons` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `course_id` bigint unsigned NOT NULL DEFAULT '1',
@@ -91,6 +96,7 @@ CREATE TABLE `lessons` (
 INSERT INTO `lessons` (`id`, `course_id`, `title`, `info`, `is_active`, `deleted_at`, `created_at`, `updated_at`) VALUES
 (1,	2,	'Вводный урок',	'Вводный урок про PHP и инструменты для работы',	0,	NULL,	'2023-04-23 10:36:28',	'2023-04-23 10:36:28');
 
+DROP TABLE IF EXISTS `linksteps`;
 CREATE TABLE `linksteps` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `steps_id` bigint unsigned NOT NULL DEFAULT '1',
@@ -108,6 +114,7 @@ INSERT INTO `linksteps` (`id`, `steps_id`, `link`, `info`, `deleted_at`, `create
 (1,	4,	'https://www.php.net/',	'Официальный сайт php',	NULL,	'2023-05-15 22:45:56',	'2023-05-15 22:45:56'),
 (2,	5,	'https://www.php.net/manual/ru/faq.general.php',	'Русскоязычный ресурс php',	NULL,	'2023-05-15 22:53:04',	'2023-05-15 22:53:04');
 
+DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -135,8 +142,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (113,	'2023_04_15_183528_add_column_autor_to_course_table',	3),
 (114,	'2023_04_15_184305_add_column_categoryforeign_to_course_table',	4),
 (115,	'2023_04_22_212513_create_sessions_table',	5),
-(116,	'2023_04_30_145343_create_types_table',	6);
+(116,	'2023_04_30_145343_create_types_table',	6),
+(117,	'2023_05_21_032008_add_column_photo_to_users_table',	7),
+(118,	'2023_05_30_202513_create_systeminfos_table',	8),
+(119,	'2023_06_18_025028_add_columns_experience_to_user_table',	9),
+(120,	'2023_06_18_030439_add_columns_education_to_user_table',	10);
 
+DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -145,6 +157,7 @@ CREATE TABLE `password_resets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
+DROP TABLE IF EXISTS `personal_access_tokens`;
 CREATE TABLE `personal_access_tokens` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -161,6 +174,7 @@ CREATE TABLE `personal_access_tokens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
+DROP TABLE IF EXISTS `queststeps`;
 CREATE TABLE `queststeps` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `steps_id` bigint unsigned NOT NULL DEFAULT '1',
@@ -175,6 +189,7 @@ CREATE TABLE `queststeps` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
+DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -190,6 +205,7 @@ INSERT INTO `roles` (`id`, `name`, `title`, `info`, `created_at`, `updated_at`) 
 (2,	'teacher',	'Учитель',	'Учитель создает курсы под своим авторством, может редактировать, удалять уроки своих курсов',	NULL,	NULL),
 (3,	'user',	'Пользователь',	'Пользователь является учеником, имеет право проходить курсы, на которые подписан, оценивать чужие курсы',	NULL,	NULL);
 
+DROP TABLE IF EXISTS `sessions`;
 CREATE TABLE `sessions` (
   `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` bigint unsigned DEFAULT NULL,
@@ -203,6 +219,7 @@ CREATE TABLE `sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
+DROP TABLE IF EXISTS `steps`;
 CREATE TABLE `steps` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `lesson_id` bigint unsigned NOT NULL DEFAULT '1',
@@ -226,6 +243,19 @@ INSERT INTO `steps` (`id`, `lesson_id`, `title`, `info`, `type`, `deleted_at`, `
 (6,	1,	'текст',	'текст 1',	'Image',	NULL,	'2023-05-10 00:55:30',	'2023-05-10 00:55:30'),
 (7,	1,	'Код программы на php',	'Вот код программы на php. Изучите его и проверьте на соответствие psr-12',	'Text',	NULL,	'2023-05-15 23:00:23',	'2023-05-15 23:00:23');
 
+DROP TABLE IF EXISTS `systeminfos`;
+CREATE TABLE `systeminfos` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `site_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'vsh_steps',
+  `project_hame` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'Videosharp',
+  `info` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Формула программирования',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+DROP TABLE IF EXISTS `teststeps`;
 CREATE TABLE `teststeps` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `steps_id` bigint unsigned NOT NULL DEFAULT '1',
@@ -240,6 +270,7 @@ CREATE TABLE `teststeps` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
+DROP TABLE IF EXISTS `textsteps`;
 CREATE TABLE `textsteps` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `steps_id` bigint unsigned NOT NULL DEFAULT '1',
@@ -255,6 +286,7 @@ CREATE TABLE `textsteps` (
 INSERT INTO `textsteps` (`id`, `steps_id`, `info`, `deleted_at`, `created_at`, `updated_at`) VALUES
 (1,	7,	'<?php\r\n// Предположим, что текущей датой является 10 марта 2001, 5:16:18 вечера,\r\n// и мы находимся в часовом поясе Mountain Standard Time (MST)\r\n\r\n$today = date(\"F j, Y, g:i a\");                 // March 10, 2001, 5:16 pm\r\n$today = date(\"m.d.y\");                         // 03.10.01\r\n$today = date(\"j, n, Y\");                       // 10, 3, 2001\r\n$today = date(\"Ymd\");                           // 20010310\r\n$today = date(\'h-i-s, j-m-y, it is w Day\');     // 05-16-18, 10-03-01, 1631 1618 6 Satpm01\r\n$today = date(\'\\i\\t \\i\\s \\t\\h\\e jS \\d\\a\\y.\');   // it is the 10th day.\r\n$today = date(\"D M j G:i:s T Y\");               // Sat Mar 10 17:16:18 MST 2001\r\n$today = date(\'H:m:s \\m \\i\\s\\ \\m\\o\\n\\t\\h\');     // 17:03:18 m is month\r\n$today = date(\"H:i:s\");                         // 17:16:18\r\n$today = date(\"Y-m-d H:i:s\");                   // 2001-03-10 17:16:18 (формат MySQL DATETIME)\r\n?>',	NULL,	'2023-05-15 23:11:54',	'2023-05-15 23:11:54');
 
+DROP TABLE IF EXISTS `types`;
 CREATE TABLE `types` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'new',
@@ -273,6 +305,7 @@ INSERT INTO `types` (`id`, `title`, `info`, `deleted_at`, `created_at`, `updated
 (5,	'Link',	'Ссылка',	NULL,	NULL,	NULL),
 (6,	'Text',	'Текст',	NULL,	NULL,	NULL);
 
+DROP TABLE IF EXISTS `user_roles`;
 CREATE TABLE `user_roles` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `user_id` bigint unsigned NOT NULL,
@@ -289,6 +322,7 @@ CREATE TABLE `user_roles` (
 INSERT INTO `user_roles` (`id`, `user_id`, `role_id`, `created_at`, `updated_at`) VALUES
 (1,	1,	2,	NULL,	NULL);
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -298,14 +332,25 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `rank` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `experience` int DEFAULT '0',
+  `megahash` int DEFAULT '0',
+  `city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `skills` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `form_club` tinyint(1) NOT NULL DEFAULT '0',
+  `education` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1,	'Евгений Витольдович',	'ev@mail.ru',	NULL,	'$2y$10$cKUnIGOwPgFceafbV9HUH.eGObQmr7AVU00E5U5F/t24qirq8LmxW',	NULL,	'2023-04-11 17:03:50',	'2023-04-11 17:03:50'),
-(2,	'Валерий Жданов',	'becwal@yandex.ru',	NULL,	'$2y$10$6WyK2dSG7smOvoQxfnxky.tyP77S.Poam/YMfG2EdUxj9LfuGPnte',	NULL,	'2023-04-25 17:43:18',	'2023-04-25 17:43:18');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `photo`, `rank`, `experience`, `megahash`, `city`, `skills`, `form_club`, `education`) VALUES
+(1,	'Евгений Витольдович',	'ev@mail.ru',	NULL,	'$2y$10$cKUnIGOwPgFceafbV9HUH.eGObQmr7AVU00E5U5F/t24qirq8LmxW',	NULL,	'2023-04-11 17:03:50',	'2023-04-11 17:03:50',	'ev@mail.ru.png',	'Полиморфер',	0,	0,	'Висагинас, Литва',	'C#, php',	0,	'Пензенский государственный технический университет, 1999'),
+(2,	'Валерий Жданов',	'becwal@yandex.ru',	NULL,	'$2y$10$6WyK2dSG7smOvoQxfnxky.tyP77S.Poam/YMfG2EdUxj9LfuGPnte',	NULL,	'2023-04-25 17:43:18',	'2023-04-25 17:43:18',	NULL,	NULL,	0,	0,	NULL,	NULL,	0,	NULL),
+(4,	'test',	'test@rt.ru',	NULL,	'$2y$10$/Bm3h8tOTssFRYYW6e4AR.cObFrmtsZdpbQ8GqY9jo/6GhP1RQ90O',	NULL,	'2023-05-21 01:52:53',	'2023-05-21 01:52:53',	NULL,	NULL,	0,	0,	NULL,	NULL,	0,	NULL),
+(6,	'dm',	'dm@bk.ru',	NULL,	'$2y$10$.wgmi4FjK/MX3b3hqxYzgu4u7SR3SfXhUM8scwuhOWdTF6f3II21O',	NULL,	'2023-05-22 23:06:11',	'2023-05-22 23:06:11',	'dm@bk.ru.jpg',	NULL,	0,	0,	NULL,	NULL,	0,	NULL);
 
+DROP TABLE IF EXISTS `videosteps`;
 CREATE TABLE `videosteps` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
   `steps_id` bigint unsigned NOT NULL DEFAULT '1',
@@ -323,4 +368,4 @@ INSERT INTO `videosteps` (`id`, `steps_id`, `link`, `info`, `deleted_at`, `creat
 (1,	1,	'I21e_mHjEjs',	'234',	NULL,	'2023-05-02 16:19:48',	'2023-05-02 16:19:48'),
 (2,	3,	'4_LWtwjaHEg',	'инструменты разработчика',	NULL,	'2023-05-09 17:15:15',	'2023-05-09 17:15:15');
 
--- 2023-05-16 02:13:46
+-- 2023-06-22 03:54:17
